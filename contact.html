@@ -1,0 +1,515 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | InAmigos Foundation</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .light-green-bg {
+    background: var(--light-green);
+  }
+  .small-text {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+  .micro-disclaimer {
+    display: block;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-light);
+    font-style: italic;
+  }
+  .faq-section {
+    border-radius: 0;
+  }
+  .faq-list {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 880px;
+  }
+  .faq-item {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xs);
+    overflow: hidden;
+    transition: box-shadow 250ms var(--ease), border-color 250ms var(--ease);
+  }
+  .faq-item:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: rgba(15, 107, 77, 0.18);
+  }
+  .faq-item.open {
+    box-shadow: var(--shadow-sm);
+    border-color: rgba(15, 107, 77, 0.28);
+  }
+  .faq-q {
+    width: 100%;
+  }
+  .faq-q button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark);
+    text-align: left;
+    letter-spacing: -0.01em;
+    min-height: 56px;
+    transition: color 200ms var(--ease);
+  }
+  .faq-q button:hover {
+    color: var(--primary);
+  }
+  .faq-q .faq-arrow {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--primary);
+    transition: transform 280ms var(--ease);
+    display: inline-block;
+    line-height: 1;
+  }
+  .faq-item.open .faq-q .faq-arrow {
+    transform: rotate(90deg);
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 400ms var(--ease);
+  }
+  .faq-a-inner {
+    padding: 0 24px 22px 52px;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .contact-grid {
+    align-items: start;
+    gap: 36px;
+  }
+  .channel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 22px;
+  }
+  .channel-card {
+    background: #fff;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    box-shadow: var(--shadow-xs);
+    transition: transform 250ms var(--ease), box-shadow 250ms var(--ease), border-color 250ms var(--ease);
+  }
+  .channel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+    border-color: rgba(15, 107, 77, 0.18);
+  }
+  .channel-card .ch-icon {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .channel-card .ch-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .channel-card .ch-value {
+    display: block;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.4;
+  }
+  .channel-card .ch-note {
+    display: block;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .form-grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+  }
+  .form-label-small {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #40554c;
+    margin-bottom: 5px;
+    letter-spacing: -0.005em;
+  }
+  .privacy-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 2px 0 4px;
+  }
+  .credentials-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .credential-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 20px;
+    border-radius: var(--radius-pill);
+    background: #fff;
+    border: 1px solid var(--border-light);
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--dark);
+    box-shadow: var(--shadow-xs);
+    transition: transform 250ms var(--ease), box-shadow 250ms var(--ease), border-color 250ms var(--ease), color 250ms var(--ease);
+  }
+  .credential-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: rgba(15, 107, 77, 0.24);
+    color: var(--primary);
+  }
+  .credential-pill .pill-icon {
+    font-style: normal;
+    font-size: 16px;
+  }
+  .transparency-link-note {
+    margin-top: 20px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+  }
+  .transparency-link-note a {
+    color: var(--primary);
+    font-weight: 700;
+    border-bottom: 1.5px solid rgba(15, 107, 77, 0.28);
+  }
+  .transparency-link-note a:hover {
+    border-color: var(--primary);
+  }
+  #back-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  @media (max-width: 800px) {
+    .channel-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .form-grid-two {
+      grid-template-columns: 1fr;
+    }
+    .faq-a-inner {
+      padding-left: 46px;
+    }
+  }
+  @media (max-width: 550px) {
+    .channel-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<nav><b>♡ InAmigos</b><span><a href="index.html">Home</a><a href="about.html">About</a><a href="programs.html">Our Work</a><a href="get-involved.html">Get Involved</a><a href="contact.html">Contact</a></span><a class="btn" href="get-involved.html#donate">Donate</a></nav>
+
+<div class="page page-bg reveal">
+  <small>CONTACT</small>
+  <h1>Let's start a conversation.</h1>
+  <p class="lead">Whether you want to volunteer, donate, partner or simply learn more — we'd love to hear from you.</p>
+</div>
+
+<section class="reveal">
+  <div class="grid two contact-grid">
+    <div class="reveal delay-100">
+      <h2>How can we help?</h2>
+      <p class="lead">Typical response within 2-3 working days.</p>
+      <div class="channel-grid">
+        <div class="channel-card">
+          <div class="image-reveal reveal" style="aspect-ratio:16/10;overflow:hidden;border-radius:10px;margin-bottom:12px;"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=NGO%20office%20desk%20with%20laptop%20showing%20email%20inbox%20and%20coffee%20cup%2C%20professional%20communication%20soft%20daylight&image_size=square_hd" alt="Email Contact" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <span class="ch-icon">✉️</span>
+          <span class="ch-label">Email</span>
+          <span class="ch-value">info@inamigosfoundation.org.in</span>
+        </div>
+        <div class="channel-card">
+          <div class="image-reveal reveal" style="aspect-ratio:16/10;overflow:hidden;border-radius:10px;margin-bottom:12px;"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=NGO%20representative%20taking%20a%20phone%20call%20on%20desk%20with%20headset%20in%20Indian%20office%2C%20friendly%20support%20soft%20light&image_size=square_hd" alt="Phone Contact" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <span class="ch-icon">☎️</span>
+          <span class="ch-label">Phone</span>
+          <span class="ch-value">+91 XXXXX XXXXX</span>
+          <span class="ch-note">Placeholder · verify</span>
+        </div>
+        <div class="channel-card">
+          <div class="image-reveal reveal" style="aspect-ratio:16/10;overflow:hidden;border-radius:10px;margin-bottom:12px;"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=modern%20Indian%20NGO%20office%20building%20entrance%20with%20welcoming%20signage%20plants%20and%20glass%20door%20professional%20daylight&image_size=square_hd" alt="Office Location" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <span class="ch-icon">⌖</span>
+          <span class="ch-label">Office</span>
+          <span class="ch-value">Chhattisgarh, India.</span>
+          <span class="ch-note">Verify exact address before production.</span>
+        </div>
+        <div class="channel-card">
+          <div class="image-reveal reveal" style="aspect-ratio:16/10;overflow:hidden;border-radius:10px;margin-bottom:12px;"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=scheduling%20a%20meeting%20in%20calendar%20app%20on%20laptop%20beside%20notepad%20with%20appointment%20notes%2C%20NGO%20professional%20warm%20light&image_size=square_hd" alt="Meetings by Appointment" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <span class="ch-icon">📅</span>
+          <span class="ch-label">Meetings</span>
+          <span class="ch-value">By appointment.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal delay-200">
+      <h3>Send us a message</h3>
+      <form>
+        <div class="form-grid-two">
+          <div>
+            <label class="form-label-small">Full name</label>
+            <input type="text" placeholder="Your full name" required>
+          </div>
+          <div>
+            <label class="form-label-small">Email</label>
+            <input type="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="form-grid-two">
+          <div>
+            <label class="form-label-small">Phone</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div>
+            <label class="form-label-small">Subject</label>
+            <input type="text" placeholder="What is this about?">
+          </div>
+        </div>
+        <div>
+          <label class="form-label-small">Reason</label>
+          <select required>
+            <option value="">Select a reason</option>
+            <option>General enquiry</option>
+            <option>Volunteer application</option>
+            <option>Donation query</option>
+            <option>CSR Partnership</option>
+            <option>Media</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label-small">Your message</label>
+          <textarea rows="6" placeholder="Tell us a bit more and we'll get back to you." required></textarea>
+        </div>
+        <p class="privacy-note">We will use your information only to respond to your enquiry. We do not share contact details.</p>
+        <button class="btn" type="submit">Send enquiry (Demo)</button>
+      </form>
+      <p class="small-text">Demo form only. Connect backend before production use.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal light-green-bg faq-section">
+  <small>FAQ</small>
+  <h2>Commonly asked questions.</h2>
+  <p class="lead">Quick answers — always verify with us for the latest information.</p>
+
+  <div class="faq-list">
+    <div class="faq-item reveal delay-100">
+      <div class="faq-q">
+        <button type="button">
+          <span class="faq-arrow">▶</span>
+          <span>How do I become a volunteer?</span>
+        </button>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Fill out the volunteer form on the Get Involved page. The team will review and reach out with next steps based on roles you're interested in.
+          <span class="micro-disclaimer">Verify details with the organization before relying on this information.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item reveal delay-200">
+      <div class="faq-q">
+        <button type="button">
+          <span class="faq-arrow">▶</span>
+          <span>How are donations used?</span>
+        </button>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Donations support programs across six initiatives. Detailed utilization and impact reporting are available on request.
+          <span class="micro-disclaimer">Verify details with the organization before relying on this information.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item reveal delay-300">
+      <div class="faq-q">
+        <button type="button">
+          <span class="faq-arrow">▶</span>
+          <span>Do you provide tax receipts?</span>
+        </button>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          The organization states it is 80G registered and donations may be tax-deductible; a receipt can be issued on request. Verify registration status directly.
+          <span class="micro-disclaimer">Verify details with the organization before relying on this information.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item reveal delay-400">
+      <div class="faq-q">
+        <button type="button">
+          <span class="faq-arrow">▶</span>
+          <span>How can my company partner through CSR?</span>
+        </button>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Reach out via the contact form selecting "CSR Partnership" or use the "Discuss a Partnership" CTA on the Get Involved page. Tailored proposals can be shared.
+          <span class="micro-disclaimer">Verify details with the organization before relying on this information.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item reveal delay-500">
+      <div class="faq-q">
+        <button type="button">
+          <span class="faq-arrow">▶</span>
+          <span>Can I visit or see programs in person?</span>
+        </button>
+      </div>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Site visits may be arranged by appointment subject to program schedules and safety protocols.
+          <span class="micro-disclaimer">Verify details with the organization before relying on this information.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <small>TRANSPARENCY</small>
+  <h2>Documents and credentials.</h2>
+  <p class="lead">Credentials, registrations and reports are a click away.</p>
+
+  <div class="credentials-row reveal delay-100">
+    <span class="credential-pill">
+      <i class="pill-icon">🏅</i>
+      80G
+    </span>
+    <span class="credential-pill">
+      <i class="pill-icon">📄</i>
+      12A
+    </span>
+    <span class="credential-pill">
+      <i class="pill-icon">🤝</i>
+      CSR-1
+    </span>
+    <span class="credential-pill">
+      <i class="pill-icon">🏛️</i>
+      NITI Aayog
+    </span>
+    <span class="credential-pill">
+      <i class="pill-icon">✅</i>
+      ISO 9001:2015
+    </span>
+    <span class="credential-pill">
+      <i class="pill-icon">📋</i>
+      Section 8
+    </span>
+  </div>
+
+  <p class="transparency-link-note">
+    Full transparency panel is available on the <a href="index.html#transparency">homepage</a> and <a href="about.html">About page</a>.
+  </p>
+</section>
+
+<section class="reveal">
+  <div class="cta">
+    <div>
+      <h2>Prefer email or phone?</h2>
+      <p>Reach out directly and a member of the team will respond as soon as possible.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn yellow" href="mailto:info@inamigosfoundation.org.in">✉️ Email</a>
+      <a class="btn ghost" href="tel:+91XXXXXXXXX">☎️ Call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><span class="heart">♡</span> InAmigos Foundation</div>
+      <p>Working across community causes including education, environment, women empowerment, animal welfare, community support and skill development.</p>
+      <div class="social-row">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="programs.html">Our Work</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <h4>Get Involved</h4>
+      <div class="footer-links">
+        <a href="get-involved.html#volunteer">Volunteer</a>
+        <a href="get-involved.html#donate">Donate</a>
+        <a href="get-involved.html#partner">Partner with us</a>
+        <a href="get-involved.html#events">Events</a>
+        <a href="contact.html">Send a message</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2026 InAmigos Foundation · AI-generated redesign concept for Task 3</span>
+    <div class="copyright-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+  <div class="disclaimer">
+    This page is part of a design concept submission. All contact details, credentials, impact figures and operational information are placeholders and must be verified with the organization before any production or public use.
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15" stroke-linecap="round" stroke-linejoin="round"></polyline>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

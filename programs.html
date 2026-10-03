@@ -1,0 +1,512 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Our Work | InAmigos Foundation</title><link rel="stylesheet" href="styles.css"><style>
+.project-detail-section .project-hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+.project-detail-section .image-reveal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+}
+.project-detail-section .image-reveal {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.themes-grid article {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  padding: 22px;
+}
+.themes-grid article i {
+  font-size: 26px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.themes-grid article h4 {
+  font-size: 15.5px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--dark);
+  letter-spacing: -0.01em;
+}
+.themes-grid article p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+.how-you-can-help article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  text-align: left;
+}
+.how-you-can-help article h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.how-you-can-help article h4::before {
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--light-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.how-you-can-help article:nth-child(1) h4::before { content: '🤝'; font-size: 18px; }
+.how-you-can-help article:nth-child(2) h4::before { content: '💝'; font-size: 18px; }
+.how-you-can-help article:nth-child(3) h4::before { content: '📣'; font-size: 18px; }
+.how-you-can-help article p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  margin: 0 0 6px;
+  line-height: 1.6;
+}
+.small-btn {
+  padding: 10px 18px;
+  font-size: 13.5px;
+  min-height: 40px;
+  margin-top: auto;
+}
+.disclaimer-small {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.6;
+}
+.quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  border: 1.5px solid var(--border-light);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--dark);
+  text-decoration: none;
+  transition: all 200ms var(--ease);
+  min-height: 44px;
+}
+.quick-nav a:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background: var(--light-green);
+}
+.quick-nav a i {
+  font-style: normal;
+  font-size: 16px;
+}
+.section-spacer {
+  height: 24px;
+}
+.final-disclaimer {
+  padding: 0 7% 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.final-disclaimer p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent);
+}
+#back-to-top.show,
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+@media (max-width: 800px) {
+  .themes-grid,
+  .grid.three.themes-grid,
+  .grid.four.themes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 550px) {
+  .themes-grid,
+  .grid.three.themes-grid,
+  .grid.four.themes-grid {
+    grid-template-columns: 1fr;
+  }
+  .quick-nav {
+    gap: 8px;
+  }
+  .quick-nav a {
+    padding: 8px 14px;
+    font-size: 12.5px;
+    min-height: 40px;
+  }
+  .final-disclaimer {
+    padding: 0 6% 20px;
+  }
+}
+</style></head><body>
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html" class="logo"><span class="heart">♡</span> InAmigos</a>
+  <span class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Our Work</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="contact.html">Contact</a>
+  </span>
+  <a class="btn" href="get-involved.html#donate">Donate</a>
+  <button class="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" aria-hidden="true">
+  <button class="mobile-close" aria-label="Close menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Our Work</a>
+  <a href="get-involved.html">Get Involved</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-cta">
+    <a class="btn" href="get-involved.html#donate">Donate Now</a>
+    <a class="btn ghost" href="get-involved.html#volunteer">Volunteer</a>
+  </div>
+</div>
+
+<div class="page page-bg">
+  <div class="reveal">
+    <small>OUR WORK</small>
+    <h1>Programs designed around community needs.</h1>
+    <p class="lead">Six initiatives — each one rooted in on-ground experience and the needs of the communities we serve.</p>
+  </div>
+</div>
+
+<section class="reveal">
+  <small>PROJECT QUICK-NAV</small>
+  <h3>Jump to a program.</h3>
+  <div class="quick-nav">
+    <a href="#seva"><i>🤲</i> Project Seva</a>
+    <a href="#bachpanshala"><i>📚</i> BachpanShala</a>
+    <a href="#jeev"><i>🐾</i> Project Jeev</a>
+    <a href="#udaan"><i>🌟</i> Project Udaan</a>
+    <a href="#prakriti"><i>🌿</i> Project Prakriti</a>
+    <a href="#vikas"><i>💡</i> Project Vikas</a>
+  </div>
+</section>
+
+<section id="seva" class="reveal project-detail-section">
+  <div class="grid two project-hero">
+    <div class="reveal delay-100">
+      <small>PROJECT 01</small>
+      <h2>Care. Dignity. Community.</h2>
+      <p class="lead">Project Seva responds to essential needs in underprivileged communities through the distribution of food, clothing and essential goods.</p>
+      <p>From regular food drives in low-income neighbourhoods to winter relief campaigns and emergency support during crises, Project Seva aims to meet immediate needs while building long-term community resilience. According to the organization's website.</p>
+      <div class="project-hero-ctas">
+        <a class="btn" href="get-involved.html#donate">Support This Program →</a>
+        <a class="btn ghost" href="get-involved.html#volunteer">Volunteer</a>
+      </div>
+    </div>
+    <div class="image-reveal reveal delay-200"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=community%20volunteers%20serving%20hot%20meals%20to%20poor%20families%20in%20India%2C%20authentic%20NGO%20photography%2C%20compassion%2C%20natural%20daylight&image_size=landscape_16_9" alt="Project Seva" loading="lazy"></div>
+  </div>
+  <div style="margin-top:48px">
+    <small>CORE FOCUS AREAS</small>
+    <h3>How Seva serves communities.</h3>
+    <div class="grid three themes-grid">
+      <article class="reveal delay-100"><i>🍲</i><div><h4>Food distribution</h4><p>Regular dry ration kits and hot meals for families facing food insecurity.</p></div></article>
+      <article class="reveal delay-200"><i>👕</i><div><h4>Clothing & essentials</h4><p>Clothes, blankets, hygiene kits and household essentials to families in need.</p></div></article>
+      <article class="reveal delay-300"><i>🍛</i><div><h4>Community kitchens</h4><p>On-ground community kitchens serving fresh, nutritious meals daily.</p></div></article>
+      <article class="reveal delay-400"><i>🧣</i><div><h4>Winter relief</h4><p>Blankets, warm clothes and heaters distributed during cold winter months.</p></div></article>
+      <article class="reveal delay-500"><i>🚑</i><div><h4>Emergency response</h4><p>Rapid relief during natural disasters, lockdowns and local emergencies.</p></div></article>
+      <article class="reveal delay-600"><i>🫂</i><div><h4>Elderly & vulnerable support</h4><p>Regular check-ins and essentials for elderly people and vulnerable households.</p></div></article>
+    </div>
+    <p style="margin-top:24px" class="disclaimer-small">Themes adapted from the organization's published articles; verify details before production.</p>
+  </div>
+  <div style="margin-top:60px" class="grid three how-you-can-help">
+    <article class="reveal delay-100"><h4>Volunteer</h4><p>Help pack or distribute essentials, run community kitchens, organize winter relief.</p><a href="get-involved.html#volunteer" class="btn ghost small-btn">Volunteer →</a></article>
+    <article class="reveal delay-200"><h4>Donate</h4><p>Your contribution supports groceries, clothing, hygiene kits and emergency responses.</p><a href="get-involved.html#donate" class="btn small-btn">Donate →</a></article>
+    <article class="reveal delay-300"><h4>Spread Awareness</h4><p>Share Project Seva in your network and help bring more supporters in.</p><button class="btn yellow small-btn">Share →</button></article>
+  </div>
+</section>
+
+<div class="section-spacer"></div>
+
+<section id="bachpanshala" class="reveal project-detail-section">
+  <div class="grid two project-hero">
+    <div class="reveal delay-100">
+      <small>PROJECT 02</small>
+      <h2>Shaping Dreams. Building Futures.</h2>
+      <p class="lead">Project BachpanShala brings education, healthcare and holistic development support to children from underserved communities.</p>
+      <p>The programme focuses on creating safe learning spaces, supporting school enrollment, providing healthcare check-ups and running skill-building workshops that help children grow with confidence. According to the organization's website.</p>
+      <div class="project-hero-ctas">
+        <a class="btn" href="get-involved.html#donate">Support This Program →</a>
+        <a class="btn ghost" href="get-involved.html#volunteer">Volunteer</a>
+      </div>
+    </div>
+    <div class="image-reveal reveal delay-200"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Indian%20children%20studying%20happily%20in%20colorful%20rural%20classroom%20with%20volunteer%20teacher%2C%20authentic%20education%20NGO%20photography%2C%20joyful%20learning&image_size=landscape_16_9" alt="Project BachpanShala" loading="lazy"></div>
+  </div>
+  <div style="margin-top:48px">
+    <small>CORE FOCUS AREAS</small>
+    <h3>How BachpanShala serves communities.</h3>
+    <div class="grid four themes-grid">
+      <article class="reveal delay-100"><i>📚</i><div><h4>Education</h4><p>Tuition support, study materials and after-school learning programmes.</p></div></article>
+      <article class="reveal delay-200"><i>🏥</i><div><h4>Healthcare</h4><p>Health check-ups, vaccination drives and nutrition support for children.</p></div></article>
+      <article class="reveal delay-300"><i>🛠️</i><div><h4>Skill development</h4><p>Creative, technical and life-skill workshops for holistic growth.</p></div></article>
+      <article class="reveal delay-400"><i>🏫</i><div><h4>Safe spaces</h4><p>Protected, welcoming learning centres where children can thrive.</p></div></article>
+      <article class="reveal delay-100"><i>👥</i><div><h4>Community engagement</h4><p>Parent involvement and local community participation in education.</p></div></article>
+      <article class="reveal delay-200"><i>🎪</i><div><h4>Workshops and camps</h4><p>Summer camps, art workshops and creative learning events.</p></div></article>
+      <article class="reveal delay-300"><i>👨‍🏫</i><div><h4>Mentorship</h4><p>One-on-one mentorship from trained volunteers and professionals.</p></div></article>
+      <article class="reveal delay-400"><i>📢</i><div><h4>Awareness campaigns</h4><p>Campaigns on child rights, education importance and wellbeing.</p></div></article>
+    </div>
+    <p style="margin-top:24px" class="disclaimer-small">Themes adapted from the organization's published articles; verify details before production.</p>
+  </div>
+  <div style="margin-top:60px" class="grid three how-you-can-help">
+    <article class="reveal delay-100"><h4>Volunteer</h4><p>Teach, help run workshops, mentor children or support healthcare camps.</p><a href="get-involved.html#volunteer" class="btn ghost small-btn">Volunteer →</a></article>
+    <article class="reveal delay-200"><h4>Donate</h4><p>Fund books, uniforms, meals, healthcare camps and learning materials.</p><a href="get-involved.html#donate" class="btn small-btn">Donate →</a></article>
+    <article class="reveal delay-300"><h4>Spread Awareness</h4><p>Share BachpanShala stories and help bring more learners and mentors in.</p><button class="btn yellow small-btn">Share →</button></article>
+  </div>
+</section>
+
+<div class="section-spacer"></div>
+
+<section id="jeev" class="reveal project-detail-section">
+  <div class="grid two project-hero">
+    <div class="reveal delay-100">
+      <small>PROJECT 03</small>
+      <h2>Compassion in Action.</h2>
+      <p class="lead">Project Jeev is dedicated to the welfare of stray and abandoned animals through rescue, care, feeding and community-led humane education.</p>
+      <p>The initiative runs on-ground rescue operations, regular community feeding programmes, shelter support, veterinary care and awareness campaigns that help build empathy for animals within local communities. According to the organization's website.</p>
+      <div class="project-hero-ctas">
+        <a class="btn" href="get-involved.html#donate">Support This Program →</a>
+        <a class="btn ghost" href="get-involved.html#volunteer">Volunteer</a>
+      </div>
+    </div>
+    <div class="image-reveal reveal delay-200"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=volunteers%20caring%20for%20rescued%20cows%20and%20stray%20dogs%2C%20animal%20welfare%20India%2C%20kindness%2C%20sunlit&image_size=landscape_16_9" alt="Project Jeev" loading="lazy"></div>
+  </div>
+  <div style="margin-top:48px">
+    <small>CORE FOCUS AREAS</small>
+    <h3>How Jeev serves communities.</h3>
+    <div class="grid three themes-grid">
+      <article class="reveal delay-100"><i>🚑</i><div><h4>Rescue</h4><p>On-ground rescue operations for injured, sick and distressed animals.</p></div></article>
+      <article class="reveal delay-200"><i>🍽️</i><div><h4>Feeding programs</h4><p>Regular feeding drives for stray dogs, cats and cows in local communities.</p></div></article>
+      <article class="reveal delay-300"><i>🏠</i><div><h4>Shelter support</h4><p>Support for temporary shelter, bedding and safe spaces for rescued animals.</p></div></article>
+      <article class="reveal delay-400"><i>🩺</i><div><h4>Veterinary care</h4><p>Vaccinations, treatments, sterilization and routine health check-ups.</p></div></article>
+      <article class="reveal delay-500"><i>🏡</i><div><h4>Adoption & foster awareness</h4><p>Drives to promote adoption, fostering and responsible pet guardianship.</p></div></article>
+      <article class="reveal delay-600"><i>📚</i><div><h4>Humane education</h4><p>School and community programmes teaching kindness and animal care.</p></div></article>
+    </div>
+    <p style="margin-top:24px" class="disclaimer-small">Themes adapted from the organization's published articles; verify details before production.</p>
+  </div>
+  <div style="margin-top:60px" class="grid three how-you-can-help">
+    <article class="reveal delay-100"><h4>Volunteer</h4><p>Help with rescue drives, feeding rounds, shelter shifts or awareness events.</p><a href="get-involved.html#volunteer" class="btn ghost small-btn">Volunteer →</a></article>
+    <article class="reveal delay-200"><h4>Donate</h4><p>Fund veterinary bills, feed stock, shelter supplies and rescue operations.</p><a href="get-involved.html#donate" class="btn small-btn">Donate →</a></article>
+    <article class="reveal delay-300"><h4>Spread Awareness</h4><p>Help share adoption stories and humane education messages in your circle.</p><button class="btn yellow small-btn">Share →</button></article>
+  </div>
+</section>
+
+<div class="section-spacer"></div>
+
+<section id="udaan" class="reveal project-detail-section">
+  <div class="grid two project-hero">
+    <div class="reveal delay-100">
+      <small>PROJECT 04</small>
+      <h2>Where Women Rise.</h2>
+      <p class="lead">Project Udaan empowers women and girls through skill development, financial literacy, livelihood support and community-led self-help groups.</p>
+      <p>By combining practical skills training with mentorship, financial education and market linkages, Udaan helps women build sustainable, independent livelihoods while gaining confidence and agency within their communities. According to the organization's website.</p>
+      <div class="project-hero-ctas">
+        <a class="btn" href="get-involved.html#donate">Support This Program →</a>
+        <a class="btn ghost" href="get-involved.html#volunteer">Volunteer</a>
+      </div>
+    </div>
+    <div class="image-reveal reveal delay-200"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=confident%20group%20of%20rural%20Indian%20women%20in%20craft%20training%20program%2C%20skilling%20NGO%20photography%2C%20empowerment%2C%20warm%20light&image_size=landscape_16_9" alt="Project Udaan" loading="lazy"></div>
+  </div>
+  <div style="margin-top:48px">
+    <small>CORE FOCUS AREAS</small>
+    <h3>How Udaan serves communities.</h3>
+    <div class="grid three themes-grid">
+      <article class="reveal delay-100"><i>🛠️</i><div><h4>Skill development</h4><p>Hands-on training in crafts, tailoring, beauty, and market-ready trades.</p></div></article>
+      <article class="reveal delay-200"><i>💵</i><div><h4>Financial literacy</h4><p>Workshops on savings, budgeting, loans and money management.</p></div></article>
+      <article class="reveal delay-300"><i>👩‍💼</i><div><h4>Entrepreneur support</h4><p>Guidance, seed ideas and market connections for micro-entrepreneurs.</p></div></article>
+      <article class="reveal delay-400"><i>👩‍🤝‍👩</i><div><h4>Self-help groups</h4><p>Facilitating savings groups and collective community action.</p></div></article>
+      <article class="reveal delay-500"><i>💼</i><div><h4>Safe livelihoods</h4><p>Linkages to safe, dignified employment and fair income opportunities.</p></div></article>
+      <article class="reveal delay-600"><i>👩‍🏫</i><div><h4>Mentorship</h4><p>One-on-one guidance from women mentors and industry professionals.</p></div></article>
+    </div>
+    <p style="margin-top:24px" class="disclaimer-small">Themes adapted from the organization's published articles; verify details before production.</p>
+  </div>
+  <div style="margin-top:60px" class="grid three how-you-can-help">
+    <article class="reveal delay-100"><h4>Volunteer</h4><p>Mentor women, teach skills or help connect artisans to market channels.</p><a href="get-involved.html#volunteer" class="btn ghost small-btn">Volunteer →</a></article>
+    <article class="reveal delay-200"><h4>Donate</h4><p>Fund training kits, stipends, seed support and SHG seed capital.</p><a href="get-involved.html#donate" class="btn small-btn">Donate →</a></article>
+    <article class="reveal delay-300"><h4>Spread Awareness</h4><p>Share Udaan stories and help connect buyers to women entrepreneurs.</p><button class="btn yellow small-btn">Share →</button></article>
+  </div>
+</section>
+
+<div class="section-spacer"></div>
+
+<section id="prakriti" class="reveal project-detail-section">
+  <div class="grid two project-hero">
+    <div class="reveal delay-100">
+      <small>PROJECT 05</small>
+      <h2>Protecting Our Planet.</h2>
+      <p class="lead">Project Prakriti drives community-led environmental action through plantation drives, conservation projects and sustainable living awareness.</p>
+      <p>From large-scale tree plantation and water conservation initiatives to waste management workshops and cleanliness drives, Prakriti brings volunteers and residents together to protect and regenerate local ecosystems. According to the organization's website.</p>
+      <div class="project-hero-ctas">
+        <a class="btn" href="get-involved.html#donate">Support This Program →</a>
+        <a class="btn ghost" href="get-involved.html#volunteer">Volunteer</a>
+      </div>
+    </div>
+    <div class="image-reveal reveal delay-200"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Indian%20community%20plantation%20drive%20volunteers%20planting%20saplings%20together%2C%20environmental%20NGO%2C%20green%20sunny&image_size=landscape_16_9" alt="Project Prakriti" loading="lazy"></div>
+  </div>
+  <div style="margin-top:48px">
+    <small>CORE FOCUS AREAS</small>
+    <h3>How Prakriti serves communities.</h3>
+    <div class="grid three themes-grid">
+      <article class="reveal delay-100"><i>🌳</i><div><h4>Plantation drives</h4><p>Large-scale sapling plantation drives in schools, public spaces and villages.</p></div></article>
+      <article class="reveal delay-200"><i>💧</i><div><h4>Water conservation</h4><p>Rainwater harvesting, pond rejuvenation and water-saving awareness.</p></div></article>
+      <article class="reveal delay-300"><i>🗑️</i><div><h4>Waste management</h4><p>Composting workshops, segregation drives and plastic reduction.</p></div></article>
+      <article class="reveal delay-400"><i>🧹</i><div><h4>Cleanliness drives</h4><p>Beach, park, neighbourhood and public space clean-up events.</p></div></article>
+      <article class="reveal delay-500"><i>♻️</i><div><h4>Sustainable living</h4><p>Workshops on eco-friendly habits, cloth bags and reducing waste.</p></div></article>
+      <article class="reveal delay-600"><i>📢</i><div><h4>Environmental awareness</h4><p>Campaigns, school programmes and events on climate and nature.</p></div></article>
+    </div>
+    <p style="margin-top:24px" class="disclaimer-small">Themes adapted from the organization's published articles; verify details before production.</p>
+  </div>
+  <div style="margin-top:60px" class="grid three how-you-can-help">
+    <article class="reveal delay-100"><h4>Volunteer</h4><p>Join plantation drives, clean-ups or lead green workshops locally.</p><a href="get-involved.html#volunteer" class="btn ghost small-btn">Volunteer →</a></article>
+    <article class="reveal delay-200"><h4>Donate</h4><p>Fund saplings, conservation kits, clean-up supplies and awareness.</p><a href="get-involved.html#donate" class="btn small-btn">Donate →</a></article>
+    <article class="reveal delay-300"><h4>Spread Awareness</h4><p>Share green ideas and inspire others to adopt sustainable habits.</p><button class="btn yellow small-btn">Share →</button></article>
+  </div>
+</section>
+
+<div class="section-spacer"></div>
+
+<section id="vikas" class="reveal project-detail-section">
+  <div class="grid two project-hero">
+    <div class="reveal delay-100">
+      <small>PROJECT 06</small>
+      <h2>Skills That Transform Lives.</h2>
+      <p class="lead">Project Vikas equips young adults with vocational training, digital literacy and employability skills to help them build stable careers.</p>
+      <p>The programme partners with industry professionals to deliver practical training, career guidance, soft-skill coaching and real industry connections that open doors to first jobs and long-term career paths. According to the organization's website.</p>
+      <div class="project-hero-ctas">
+        <a class="btn" href="get-involved.html#donate">Support This Program →</a>
+        <a class="btn ghost" href="get-involved.html#volunteer">Volunteer</a>
+      </div>
+    </div>
+    <div class="image-reveal reveal delay-200"><img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=young%20Indian%20adults%20in%20modern%20vocational%20training%20center%20learning%20computer%20skills%2C%20professional%20NGO%20education%20photo&image_size=landscape_16_9" alt="Project Vikas" loading="lazy"></div>
+  </div>
+  <div style="margin-top:48px">
+    <small>CORE FOCUS AREAS</small>
+    <h3>How Vikas serves communities.</h3>
+    <div class="grid three themes-grid">
+      <article class="reveal delay-100"><i>🎓</i><div><h4>Vocational training</h4><p>Industry-aligned courses in trades with real employment demand.</p></div></article>
+      <article class="reveal delay-200"><i>💼</i><div><h4>Employability skills</h4><p>Resume, interview and job-readiness coaching for first-time job seekers.</p></div></article>
+      <article class="reveal delay-300"><i>💻</i><div><h4>Digital literacy</h4><p>Computer basics, internet skills and productivity tools training.</p></div></article>
+      <article class="reveal delay-400"><i>🧭</i><div><h4>Career guidance</h4><p>One-on-one counselling and exploration of viable career paths.</p></div></article>
+      <article class="reveal delay-500"><i>🔗</i><div><h4>Industry connections</h4><p>Internship placements, hiring partner links and apprenticeship leads.</p></div></article>
+      <article class="reveal delay-600"><i>🗣️</i><div><h4>Soft skills</h4><p>Communication, teamwork, confidence and workplace etiquette.</p></div></article>
+    </div>
+    <p style="margin-top:24px" class="disclaimer-small">Themes adapted from the organization's published articles; verify details before production.</p>
+  </div>
+  <div style="margin-top:60px" class="grid three how-you-can-help">
+    <article class="reveal delay-100"><h4>Volunteer</h4><p>Teach skills, mentor youth, conduct mock interviews or guest sessions.</p><a href="get-involved.html#volunteer" class="btn ghost small-btn">Volunteer →</a></article>
+    <article class="reveal delay-200"><h4>Donate</h4><p>Fund lab equipment, training kits, stipends and certification fees.</p><a href="get-involved.html#donate" class="btn small-btn">Donate →</a></article>
+    <article class="reveal delay-300"><h4>Spread Awareness</h4><p>Share Vikas opportunities with youth in your network or community.</p><button class="btn yellow small-btn">Share →</button></article>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="cta">
+    <div>
+      <small>YOUR NEXT STEP</small>
+      <h2>Ready to support one of these programs?</h2>
+      <p>Every contribution — whether time, funds or a share — helps these programmes reach more people.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn yellow" href="get-involved.html#donate">Donate</a>
+      <a class="btn" href="get-involved.html#volunteer">Volunteer</a>
+      <a class="btn ghost" href="contact.html">Contact</a>
+    </div>
+  </div>
+</section>
+
+<div class="final-disclaimer">
+  <p>Project descriptions adapted from inamigosfoundation.org.in as referenced. Verify current program details, reach and activities directly with the organization before production use.</p>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><span class="heart">♡</span> InAmigos</div>
+      <p>InAmigos Foundation works across community-focused causes including education, women empowerment, animal welfare, community support, environment and skill development.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Our Work</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <div class="footer-links">
+        <a href="get-involved.html#donate">Donate</a>
+        <a href="get-involved.html#volunteer">Volunteer</a>
+        <a href="contact.html">Partner With Us</a>
+        <a href="contact.html">Contact Team</a>
+      </div>
+      <div class="social-row" style="margin-top:18px">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2026 InAmigos Foundation · AI-generated redesign concept for Task 3</span>
+    <div class="copyright-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="disclaimer">
+    This is a redesign concept created as part of a submission task. Content has been adapted from publicly available organizational materials for presentation purposes only.
+  </div>
+</footer>
+
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script src="script.js"></script>
+</body></html>
